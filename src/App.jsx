@@ -6,8 +6,8 @@ function App() {
   const cards = data.map(item => {
     return (
       <Card 
-        key={item.id} 
-        {...item} />
+      key={item.id}
+      {...item} />
     )
   })
 
@@ -15,7 +15,9 @@ function App() {
     <div>
       <Header />
       <section className="travel-list">
-        {cards}
+        <div className="container">
+          {cards}
+        </div>
       </section>
     </div>
   )

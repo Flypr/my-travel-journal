@@ -1,12 +1,14 @@
 .card {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template: auto 1fr / auto;
     gap: 24px;
 }
 
 .card__image {
-    max-width: 125px;
-    height: 168px;
+    width: 100%;
+    min-width: 140px;
+    height: 100%;
+    max-height: 240px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -34,7 +36,7 @@
 
 .card__location {
     color: #2B283A;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.4;
     text-transform: uppercase;
@@ -44,7 +46,7 @@
 
 .card__location-link {
     color: #918E9B;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.4;
     margin: 0;
@@ -57,7 +59,7 @@
 
 .card__title {
     color: #2B283A;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
     margin-top: 0;
@@ -66,7 +68,7 @@
 
 .card__date {
     color: #2B283A;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1.4;
     margin-top: 0;
@@ -75,8 +77,37 @@
 
 .card__description {
     color: #2B283A;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.5;
     margin: 0;
+}
+
+.card__divider {
+    height: 1px;
+    width: 100%;
+    background-color: #F5F5F5;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+@media screen and (min-width: 576px) {
+    .card {
+        grid-template: auto / 1fr auto;
+    }
+
+    .card__image {
+        max-height: 100%;
+    }
+    
+    .card__title {
+        font-size: 32px;
+    }
+
+    .card__location-link,
+    .card__location,
+    .card__description,
+    .card__date {
+        font-size: 16px;
+    }
 }
